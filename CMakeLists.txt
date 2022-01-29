@@ -1,0 +1,2 @@
+PROJECT(main_cmake)
+add_subdirectory(pybind_project)

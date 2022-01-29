@@ -7,12 +7,12 @@ void Message::PrintMsg(Message msg)
     cout<<"Id: "<<msg._id<<"Msg: "<<msg._msg<<endl;
 }
 
-int Message::getMsgId()
+int Message::GetMsgId()
 {
     return this->_id;
 }
 
-string Message::getMsgText()
+string Message::GetMsgText()
 {
     return this->_msg;
 }

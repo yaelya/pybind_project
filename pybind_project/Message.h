@@ -7,9 +7,10 @@ class Message {
 public:
     Message(){};
     Message(int id, string message): _id(id), _msg(message) {};
-    void PrintMsg(Message msg);
-    int getMsgId();
-    string getMsgText();
+
+    void PrintMsg(Message msg); // For debugging
+    int GetMsgId();
+    string GetMsgText();
 
 private:
     int _id;

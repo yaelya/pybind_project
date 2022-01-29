@@ -9,7 +9,7 @@
 
 namespace py = pybind11;
 
-// Fill the messages vec
+// Fill the messages vec, with tmp message
 void fill_messages_vec(std::vector<Message> &msg_vec)
 {
     cout<<"Fill messages vector."<<endl;
@@ -25,19 +25,14 @@ PYBIND11_MODULE(module_name, m) {
     py::class_<Message>(
         m, "Message"   
     )
-    .def(py::init<int, string>())
-    .def("print_msg", &Message::PrintMsg)
+    .def("get_msg_id", &Message::getMsgId)
+    .def("get_msg_text", &Message::getMsgText)
     ;
-
-	// messages_dict is an python dict that will contian {"ID", "MSG"} EX: {12: ""}
-    m.def("get_messages_vec", [](py::dict messages_dict){ 
+    
+    // Returns vector of Messages
+    m.def("get_messages_vec", [](){ 
         std::vector<Message> msg_vec;
         fill_messages_vec(msg_vec);
-        // cast to python dict
-        for (Message m: msg_vec)
-        {
-            // using py::cast in order to parse from c++ map to python dict.
-			messages_dict[py::cast(m.get_msg_id(m))] = m.get_msg_text(m);
-        }
+        return msg_vec;
     });
 }

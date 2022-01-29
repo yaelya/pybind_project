@@ -6,13 +6,13 @@ using namespace std;
 class Message {
 public:
     Message(){};
-    Message(int id, string message): id(id), msg(message) {};
+    Message(int id, string message): _id(id), _msg(message) {};
     void PrintMsg(Message msg);
-    int get_msg_id(Message mgs);
-    string get_msg_text(Message mgs);
+    int getMsgId();
+    string getMsgText();
 
 private:
-    int id;
-    string msg;
+    int _id;
+    string _msg;
 };
 

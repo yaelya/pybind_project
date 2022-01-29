@@ -4,16 +4,16 @@
 
 void Message::PrintMsg(Message msg)
 {
-    cout<<"Id: "<<msg.id<<"Msg: "<<msg.msg<<endl;
+    cout<<"Id: "<<msg._id<<"Msg: "<<msg._msg<<endl;
 }
 
-int Message::get_msg_id(Message mgs)
+int Message::getMsgId()
 {
-    return mgs.id;
+    return this->_id;
 }
 
-string Message::get_msg_text(Message mgs)
+string Message::getMsgText()
 {
-    return mgs.msg;
+    return this->_msg;
 }
 
